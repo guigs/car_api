@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "head": {
+    "action": "locations"
+  },
+  "locations": [
+    {
+      "vehicleCount": "1",
+      "latitude": "51.511318",
+      "restrictedP": "f",
+      "description": "West Ealing - Hartington Rd",
+      "marketId": "33074166",
+      "locationId": "549202705",
+      "hasVans": "1",
+      "longitude": "-.318178",
+      "zipfleetId": "33074050"
+    },
+    {
+      "vehicleCount": "2",
+      "latitude": "51.553667",
+      "restrictedP": "f",
+      "description": "Sudbury - Williams Way",
+      "marketId": "33074166",
+      "locationId": "985289848",
+      "hasVans": "0",
+      "longitude": "-.315159",
+      "zipfleetId": "33074050"
+    }
+  ]
+}

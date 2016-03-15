@@ -63,3 +63,7 @@ To install PostgreSQL/PostGIS on Ubuntu 14.04, run:
     sudo -u postgres psql -c "CREATE USER car_api WITH SUPERUSER CREATEDB PASSWORD 'car_api';"
     rake db:setup
 
+### Import locations from json data file
+
+    rake car_api:locations:import
+    
