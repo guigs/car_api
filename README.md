@@ -45,3 +45,21 @@ This endpoint should fetch the 10 closest cars from the database and return them
 - Use this repository to build your solution.
 - The solution should perform well regardless of the number of records
 - Don't forget the instructions for testing and running the code.
+
+## Development setup
+
+### Prerequisites
+
+* Ruby 2.2.4
+* PostgreSQL 9.1+
+* PostGIS 2.0+
+  
+To install PostgreSQL/PostGIS on Ubuntu 14.04, run:
+  
+    sudo apt-get -y install postgresql libpq-dev postgresql-contrib postgis postgresql-9.3-postgis-scripts
+
+### Create development and test databases
+
+    sudo -u postgres psql -c "CREATE USER car_api WITH SUPERUSER CREATEDB PASSWORD 'car_api';"
+    rake db:create
+
