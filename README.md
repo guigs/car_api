@@ -67,3 +67,14 @@ To install PostgreSQL/PostGIS on Ubuntu 14.04, run:
 
     rake car_api:locations:import
     
+### Run tests
+
+    rake test
+    
+### Run server
+
+    rails server
+    
+### Access the API 
+    
+    http://localhost:3000/cars?location=51.5444204,-0.22707 

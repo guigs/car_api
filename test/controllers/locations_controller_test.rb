@@ -1,38 +1,17 @@
 require 'test_helper'
 
 class LocationsControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @location = locations(:one)
-  end
-
-  test "should get index" do
-    get locations_url
-    assert_response :success
-  end
-
-  test "should create location" do
-    assert_difference('Location.count') do
-      post locations_url, params: { location: { description: @location.description, lonlat: @location.lonlat } }
+  test "should require location param" do
+    assert_raises(ActionController::ParameterMissing) do
+      get cars_url
     end
-
-    assert_response 201
   end
 
-  test "should show location" do
-    get location_url(@location)
+  test "should return cars json in correct format" do
+    get cars_url, params: { location: '51.5444204,-0.22707' }
     assert_response :success
-  end
-
-  test "should update location" do
-    patch location_url(@location), params: { location: { description: @location.description, lonlat: @location.lonlat } }
-    assert_response 200
-  end
-
-  test "should destroy location" do
-    assert_difference('Location.count', -1) do
-      delete location_url(@location)
-    end
-
-    assert_response 204
+    json = JSON.parse(response.body)
+    assert(json.has_key?("cars"))
+    assert_equal(['description', 'latitude', 'longitude'].to_set, json["cars"].first.keys.to_set)
   end
 end
